@@ -19,7 +19,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=250,unique=True)
     featured = models.BooleanField(default=False)
     price = models.DecimalField(max_digits=8,decimal_places=2)
-    thumbnail = models.CharField(blank=True, default='Image Not Uploaded')
+    thumbnail = models.CharField(blank=True, default='Image Not Uploaded',max_length=200)
     image = models.ImageField(upload_to='static/', default='N/A')
     description = models.TextField(null=True, blank=True, default='N/A')
     in_stock = models.BooleanField(default=True)
